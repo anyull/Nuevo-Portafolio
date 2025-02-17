@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Tecnología y Cine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2C2B5E, #5E3B76, #7B68EE, #9370DB, #4E2A7F);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .nav a {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #fff;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.1);
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .carousel img.active {
+            opacity: 1;
+        }
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+        .section {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            min-height: 150px;
+            transition: transform 0.3s;
+        }
+        .section:hover {
+            transform: scale(1.05);
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Blog de Tecnología y Cine</div>
+        
+        <div class="nav">
+            <a href="articulo1.html">Animación y IA</a>
+            <a href="articulo2.html">El legado de Paul Walker</a>
+            <a href="articulo3.html">Diseño en Revistas</a>
+            <a href="articulo4.html">El arte de la Cinemateca</a>
+            <a href="articulo5.html">Evolución del Desarrollo Web</a>
+        </div>
+        
+        <div class="carousel">
+            <img src="imagenes/banner.jpg" class="active" alt="Imagen 1">
+            <img src="imagenes/banner2.jpg" alt="Imagen 2">
+            <img src="imagenes/banner1.jpg" alt="Imagen 3">
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>Animación con IA</h2>
+                <p>Descubre cómo la inteligencia artificial ha revolucionado la animación en videojuegos.</p>
+            </div>
+            <div class="section">
+                <h2>El legado de Paul Walker</h2>
+                <p>Cómo la tecnología y los dobles permitieron la despedida de Brian O’Conner.</p>
+            </div>
+            <div class="section">
+                <h2>Diseño en Tapas</h2>
+                <p>La revista Tapas y su combinación de tradición y modernidad en el diseño editorial.</p>
+            </div>
+            <div class="section">
+                <h2>Cinematecas</h2>
+                <p>El papel crucial de las cinematecas en la conservación del cine clásico e independiente.</p>
+            </div>
+            <div class="section">
+                <h2>Creación Web</h2>
+                <p>Cómo la creación de sitios web ha evolucionado con frameworks y herramientas no-code.</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            © 2025 Blog de Tecnología y Cine - Todos los derechos reservados
+        </div>
+    </div>
+
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll('.carousel img');
+        function changeImage() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+        setInterval(changeImage, 3000);
+    </script>
+</body>
+</html>
+
+
+
